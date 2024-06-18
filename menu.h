@@ -3,7 +3,7 @@
 
 void menu();
 void ElejirJugadores();
-void ModoSimuldado();
-void ModoUnJugadorSimulado();
+void Creditos();
+void Reglas();
 
 #endif // MENU_H_INCLUDED
