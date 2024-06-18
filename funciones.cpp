@@ -1,6 +1,5 @@
 #include <iostream>
 #include "funciones.h"
-#include "menu.h"
 
 using namespace std;
 
@@ -47,18 +46,24 @@ int SumaDeDados (int v[], int tam)
     return contador;
 }
 
-int Sexteto (int v[], int tam, int num)
+bool Sexteto2 (int v[], int tam)
 {
-    int cant = 0;
-    for(int i = 0; i < tam; i++)
+    int cont = 0;
+    for (int i = 0; i < tam; i++)
     {
-        if(v[i] == num)
+        if (v[i] == 2)
         {
-            cant++;
+            cont++;
         }
     }
-    return cant;
+    if (cont == tam)
+    {
+        return true;
+    }
+    return false;
+
 }
+
 
 void ordenarVector(int vec[], int tam)
 {
@@ -97,19 +102,23 @@ bool Escalera (int v[], int tam)
 bool Sexteto6 (int v[], int tam)
 {
     int cont = 0;
-    for (int i = 0; i < tam; i++){
-        if (v[i] == tam){
+    for (int i = 0; i < tam; i++)
+    {
+        if (v[i] == tam)
+        {
             cont++;
         }
     }
-     if (cont == tam){
+    if (cont == tam)
+    {
         return true;
-     }
+    }
     return false;
 
 }
 
-void PressEnter(){
+void PressEnter()
+{
 
     system("pause");
     cout << "------------------------------------------------------------------------------------------------------------------------";
@@ -166,5 +175,3 @@ bool verificarTodosRepetidos(int vec[], int tam)
     return false;
 }
 */
-
-
