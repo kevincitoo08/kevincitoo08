@@ -11,6 +11,7 @@ void ModoUnJugador()
     int ronda = 1;
     int PuntosAct = 0;
     int puntos = 0;
+    int jugada = 0;
     string nombre;
 
     cout << "Ingrese su nombre de jugador: ";
@@ -28,8 +29,9 @@ void ModoUnJugador()
     {
         for (int i = 0; i < 3; i++)
         {
+            jugada = i+1;
             cout << "------------------------------------------------------------------------------------------------------------------------";
-            cout << "TURNO DE " << nombre << "     |    RONDA #" << ronda << "    |     PUNTAJE ACTUAL: " << PuntosAct << endl;
+            cout << "TURNO DE " << nombre << "     |    TIRADA #" << jugada << "    |     PUNTAJE ACTUAL: " << PuntosAct << endl;
             cout << "------------------------------------------------------------------------------------------------------------------------";
 
             generarTirada(tirada, TAM);
@@ -37,7 +39,8 @@ void ModoUnJugador()
             ordenarVector(tirada, TAM);
             Escalera (tirada, TAM);
             puntos = SumaDeDados (tirada, TAM);
-            Sexteto6(tirada, TAM);
+            Sexteto(tirada, TAM);
+            SextetodeX(tirada, TAM);
             PuntosAct += puntos;
             if (Escalera(tirada, TAM) == true)
             {
@@ -50,7 +53,7 @@ void ModoUnJugador()
                 system("pause");
                 menu();
             }
-            if (Sexteto6(tirada, TAM) == true)
+            if (Sexteto(tirada, TAM) == true)
             {
                 puntos = 0;
                 PuntosAct = 0;
