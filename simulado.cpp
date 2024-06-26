@@ -11,6 +11,7 @@ void ModoUnJugadorSimulado()
     int ronda = 1;
     int PuntosAct = 0;
     int puntos = 0;
+    int jugada = 0;
     string nombre;
 
     cout << "Ingrese su nombre de jugador: ";
@@ -28,16 +29,17 @@ void ModoUnJugadorSimulado()
     {
         for (int i = 0; i < 3; i++)
         {
+            jugada = i+1;
             cout << "------------------------------------------------------------------------------------------------------------------------";
-            cout << "TURNO DE " << nombre << "     |    RONDA #" << ronda << "    |     PUNTAJE ACTUAL: " << PuntosAct << endl;
+            cout << "TURNO DE " << nombre << "     |    TIRADA #" << jugada << "    |     PUNTAJE ACTUAL: " << PuntosAct << endl;
             cout << "------------------------------------------------------------------------------------------------------------------------";
 
-            escribirTirada (tirada, TAM);
+            escribirTirada(tirada, TAM);
             ordenarVector(tirada, TAM);
             Escalera (tirada, TAM);
-            puntos = SumaDeDados (tirada, TAM);
-            Sexteto6(tirada, TAM);
-            PuntosAct += puntos;
+            SumaDeDados (tirada,TAM);
+            Sexteto(tirada, TAM);
+            SextetodeX(tirada, TAM);
             if (Escalera(tirada, TAM) == true)
             {
                 system("cls");
@@ -49,14 +51,22 @@ void ModoUnJugadorSimulado()
                 system("pause");
                 menu();
             }
-            if (Sexteto6(tirada, TAM) == true)
+            if (SextetodeX(tirada, TAM) == true){
+                puntos = tirada[0] * 10;
+                PuntosAct += puntos;
+                cout << "SEXTETO DE " << tirada[0] << " =D!!!" <<endl;
+                system("pause");
+            }
+            if (Sexteto(tirada, TAM) == true)
             {
                 puntos = 0;
                 PuntosAct = 0;
                 cout << "SEXTETO DE SEIS! SE REINICIA EL PUNTAJE!"<<endl;
+                system("pause");
             }
-            else
-            {
+            if (SextetodeX(tirada, TAM) == false && Sexteto(tirada, TAM) == false){
+                puntos = SumaDeDados (tirada, TAM);
+                PuntosAct += puntos;
                 cout << "LA TIRADA SUMA: " << puntos << " PUNTOS" <<endl;
                 system("pause");
             }
