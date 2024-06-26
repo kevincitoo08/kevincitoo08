@@ -5,5 +5,6 @@ void ModoSimuldado();
 void ModoUnJugador();
 void ModoDosJugadores();
 void ModoUnJugadorSimulado();
+void ModoSimuldado();
 
 #endif // JUEGOS_H_INCLUDED
