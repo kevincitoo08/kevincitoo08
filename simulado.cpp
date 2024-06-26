@@ -11,7 +11,7 @@ void ModoUnJugadorSimulado()
     int ronda = 1;
     int PuntosAct = 0;
     int puntos = 0;
-    int jugada = 0;
+    int jugada = 1;
     string nombre;
 
     cout << "Ingrese su nombre de jugador: ";
@@ -29,7 +29,6 @@ void ModoUnJugadorSimulado()
     {
         for (int i = 0; i < 3; i++)
         {
-            jugada = i+1;
             cout << "------------------------------------------------------------------------------------------------------------------------";
             cout << "TURNO DE " << nombre << "     |    TIRADA #" << jugada << "    |     PUNTAJE ACTUAL: " << PuntosAct << endl;
             cout << "------------------------------------------------------------------------------------------------------------------------";
@@ -74,6 +73,7 @@ void ModoUnJugadorSimulado()
             {
                 break;
             }
+            jugada++;
         }
         system("cls");
         if (PuntosAct < 100)
@@ -103,5 +103,3 @@ void ModoUnJugadorSimulado()
     cout << "------------------------------------------------------------------------------------------------------------------------";
     system("pause");
 }
-
-
