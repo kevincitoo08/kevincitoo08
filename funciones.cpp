@@ -46,25 +46,6 @@ int SumaDeDados (int v[], int tam)
     return contador;
 }
 
-bool Sexteto2 (int v[], int tam)
-{
-    int cont = 0;
-    for (int i = 0; i < tam; i++)
-    {
-        if (v[i] == 2)
-        {
-            cont++;
-        }
-    }
-    if (cont == tam)
-    {
-        return true;
-    }
-    return false;
-
-}
-
-
 void ordenarVector(int vec[], int tam)
 {
     int aux;
@@ -99,7 +80,7 @@ bool Escalera (int v[], int tam)
     }
     return false;
 }
-bool Sexteto6 (int v[], int tam)
+bool Sexteto (int v[], int tam)
 {
     int cont = 0;
     for (int i = 0; i < tam; i++)
@@ -116,62 +97,26 @@ bool Sexteto6 (int v[], int tam)
     return false;
 
 }
+bool SextetodeX (int v[], int tam)
+{
+    int cont = 0;
+    for (int i = 0; i < tam; i++)
+    {
+        if (v[i] == v[0] && v[0] != tam)
+        {
+            cont++;
+        }
+    }
 
+    if (cont == tam)
+    {
+        return true;
+    }
+    return false;
+}
 void PressEnter()
 {
 
     system("pause");
     cout << "------------------------------------------------------------------------------------------------------------------------";
 }
-
-/*
-bool compararVectoresEnMismaPosicion(int vec1[], int vec2[], int tam)
-{
-    for(int i = 0; i < tam; i++)
-    {
-        if(vec1[i] != vec2[i])
-        {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool existeNumeroVector(int vec[], int tam, int num)
-{
-    for(int i = 0; i < tam; i++)
-    {
-        if(vec[i] == num)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-/// SEXTETO
-int contarNumerosRepetidos(int vec[], int tam, int num)
-{
-    int cant = 0;
-    for(int i = 0; i < tam; i++)
-    {
-        if(vec[i] == num)
-        {
-            cant++;
-        }
-    }
-
-    return cant;
-}
-/// SEXTETO de 6
-bool verificarTodosRepetidos(int vec[], int tam)
-{
-    int cantidadRepetidos;
-    cantidadRepetidos = contarNumerosRepetidos(vec, tam, vec[0]);
-    if(cantidadRepetidos == tam)
-    {
-        return true;
-    }
-    return false;
-}
-*/
