@@ -1,10 +1,9 @@
 #ifndef JUEGOS_H_INCLUDED
 #define JUEGOS_H_INCLUDED
 
-void ModoSimuldado();
+void ModoUnJugadorSimulado();
 void ModoUnJugador();
 void ModoDosJugadores();
-void ModoUnJugadorSimulado();
-void ModoSimuldado();
+void ModoDosJugadoresSimulado();
 
 #endif // JUEGOS_H_INCLUDED
