@@ -2,7 +2,11 @@
 #include "juegos.h"
 #include "funciones.h"
 #include "menu.h"
+#include "rlutil.h"
+
 using namespace std;
+
+
 
 void ModoUnJugador()
 {
@@ -30,7 +34,7 @@ void ModoUnJugador()
         for (int i = 0; i < 3; i++)
         {
             cout << "------------------------------------------------------------------------------------------------------------------------";
-            cout << "TURNO DE " << nombre << "     |    LANZAMIENTO # " << lanzamiento << "    |     PUNTAJE ACTUAL: " << PuntosAct << endl;
+            cout << "TURNO DE " << nombre << "     |     LANZAMIENTO # " << lanzamiento << "    |     PUNTAJE ACTUAL: " << PuntosAct << endl;
             cout << "------------------------------------------------------------------------------------------------------------------------";
 
             generarTirada(tirada, TAM);
@@ -73,7 +77,7 @@ void ModoUnJugador()
             }
             if (PuntosAct > 100)
             {
-                break;
+                rlutil::anykey();
             }
             lanzamiento++;
         }
@@ -140,7 +144,7 @@ void ModoDosJugadores()
     cout << "------------------------------------------------------------------------------------------------------------------------";
     system("pause");
     system("cls");
-    while (PuntosAct1 <= 100 || PuntosAct2 <= 100)
+    while ( PuntosAct1 < 100 || PuntosAct2 < 100)
     {
         for (int i = 0; i < 3; i++)
         {
@@ -156,6 +160,7 @@ void ModoDosJugadores()
             SextetodeX(tirada, TAM);
             if (Escalera(tirada, TAM) == true)
             {
+                system("pause");
                 system("cls");
                 cout << "------------------------------------------------------------------------------------------------------------------------";
                 cout << "" <<endl;
@@ -189,8 +194,11 @@ void ModoDosJugadores()
                 cout << "LA TIRADA SUMA: " << puntos1 << " PUNTOS" <<endl;
                 system("pause");
             }
-            if (PuntosAct1 > 100 )
+          if (PuntosAct1 > 100 )
             {
+                system("cls");
+                cout << " PUNTAJE DE " << nombre1 << "es: " << PuntosAct1 << "EN EL LANZAMIENTO # " << lanzamiento << endl;
+                system("pause");
                 break;
             }
             lanzamiento++;
@@ -210,6 +218,7 @@ void ModoDosJugadores()
             cout << "------------------------------------------------------------------------------------------------------------------------";
             system("pause");
             system("cls");
+        }
 
             for (int i = 0; i < 3; i++)
             {
@@ -260,8 +269,12 @@ void ModoDosJugadores()
                     cout << "LA TIRADA SUMA: " << puntos2 << " PUNTOS" <<endl;
                     system("pause");
                 }
-                if (PuntosAct2 > 100 )
+               if (PuntosAct2 > 100 )
                 {
+
+                    system("cls");
+                    cout << " PUNTAJE DE " << nombre2 << "es: " << PuntosAct2 << "EN EL LANZAMIENTO # " << lanzamiento << endl;
+                    system("pause");
                     break;
                 }
                 lanzamiento++;
@@ -280,6 +293,7 @@ void ModoDosJugadores()
             system("pause");
             system("cls");
             ronda++;
+            if (PuntosAct2 < 100){
             cout << "------------------------------------------------------------------------------------------------------------------------";
             cout << " " <<endl;
             cout << " " <<endl;
@@ -289,7 +303,8 @@ void ModoDosJugadores()
             cout << "------------------------------------------------------------------------------------------------------------------------";
             system("pause");
             system("cls");
-        }
+
+    }
     }
     if (PuntosAct1 > PuntosAct2)
     {
