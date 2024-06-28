@@ -1,6 +1,7 @@
 #include <iostream>
-#include "menu.h"
 #include "juegos.h"
+#include "funciones.h"
+#include "menu.h"
 using namespace std;
 
 void menu()
@@ -34,12 +35,11 @@ void menu()
             ElejirJugadores();
             break;
         case 2:
-
+            PuntajesMaximos();
             break;
         case 3:
             Creditos();
             break;
-
         case 4:
             ModoSimuldado();
             break;
@@ -69,6 +69,9 @@ void ElejirJugadores()
     {
         ModoUnJugador();
     }
+    else{
+        ModoDosJugadores();
+    }
 }
 
 void ModoSimuldado()
@@ -87,6 +90,9 @@ void ModoSimuldado()
     if (jugador==1)
     {
         ModoUnJugadorSimulado();
+    }
+    else{
+        ModoDosJugadoresSimulado();
     }
 
 }
@@ -128,27 +134,38 @@ void Reglas()
     cout << " " <<endl;
     cout << " " <<endl;
     cout << "                                            COMBINACIONES CON PUNTOS"<<endl;
-    cout << "                    ________________________________________________________________________"<<endl;
-    cout << "                   |                       |                   |                            |"<<endl;
-    cout << "                   |      Combinacion      |   Nombre jugada   |       Puntaje otorgado     |"<<endl;
-    cout << "                   |_______________________|___________________|____________________________|"<<endl;
-    cout << "                   |                       |                   |                            |"<<endl;
-    cout << "                   |Menos de 6 dados con   |                   |Suma de los valores de todos|"<<endl;
-    cout << "                   |valores iguales        | Suma de dados     |los dados Para el ejemplo   |"<<endl;
-    cout << "                   |Ejemplo: 6,5,5,2,2,1   |                   |seria 6+5+5+2+2+1=21        |"<<endl;
-    cout << "                   |_______________________|___________________|____________________________|"<<endl;
-    cout << "                   |                       |                   |                            |"<<endl;
-    cout << "                   |6 dados iguales (menos |Sexteto X (X es    |X*10 puntos                 |"<<endl;
-    cout << "                   |para el número 6)      |el número del dado)|                            |"<<endl;
-    cout << "                   |_______________________|___________________|____________________________|"<<endl;
-    cout << "                   |                       |                   |                            |"<<endl;
-    cout << "                   |Escalera. En cualquier |ESCALERA           |Gana la partida en esa ronda|"<<endl;
-    cout << "                   |orden(1, 2, 3, 4, 5, 6)|                   |                            |"<<endl;
-    cout << "                   |_______________________|___________________|____________________________|"<<endl;
-    cout << "                   |                       |                   |                            |"<<endl;
-    cout << "                   |Seis 6                 |SEXTETO de 6       |Resetea el puntaje total a 0|"<<endl;
-    cout << "                   |_______________________|___________________|____________________________|"<<endl;
+    cout << "                      +------------------------------------------------------------------------+" <<endl;
+    cout << "                      |      Combinacion        |  Nombre jugada  |      Puntaje otorgado      |" <<endl;
+    cout << "                      |-------------------------|-----------------|----------------------------|" <<endl;
+    cout << "                      | Menos de 6 dados con    |                 | Suma de los valores de     |" <<endl;
+    cout << "                      | valores iguales         |  Suma de dados  | todos los dados            |" <<endl;
+    cout << "                      | Ejemplo: 6,5,5,2,2,1    |                 | Ejemplo: 6+5+5+2+2+1=21    |" <<endl;
+    cout << "                      |-------------------------|-----------------|----------------------------|" <<endl;
+    cout << "                      | 6 dados iguales(menos   |  Sexteto X (X   | X*10 puntos                |" <<endl;
+    cout << "                      | para el numero 6)       |  es el numero   |                            |" <<endl;
+    cout << "                      |                         |  del dado)      |                            |" <<endl;
+    cout << "                      |-------------------------|-----------------|----------------------------|" <<endl;
+    cout << "                      | Escalera en cualquier   |  ESCALERA       | Gana la partida en esa     |" <<endl;
+    cout << "                      | orden (1, 2, 3, 4, 5, 6)|                 | ronda                      |" <<endl;
+    cout << "                      |-------------------------|-----------------|----------------------------|" <<endl;
+    cout << "                      | Seis 6                  |  SEXTETO de 6   | Resetea el puntaje total   |" <<endl;
+    cout << "                      |                         |                 | a 0                        |" <<endl;
+    cout << "                      +------------------------------------------------------------------------+" <<endl;
     cout << " " <<endl;
     cout << " " <<endl;
     system("pause");
+}
+
+void PuntajesMaximos(){
+    system("cls");
+    cout << "+-------------------+" << endl;
+    cout << "|  PUNTAJES MAXIMOS |" << endl;
+    cout << "+-------------------+" << endl;
+    cout << "| 1. Juan    - 15000|" << endl;
+    cout << "| 2. María   - 14000|" << endl;
+    cout << "| 3. Pedro   - 13000|" << endl;
+    cout << "| 4. Lucía   - 12000|" << endl;
+    cout << "| 5. Carlos  - 11000|" << endl;
+    cout << "+-------------------+" << endl;
+system("pause");
 }
