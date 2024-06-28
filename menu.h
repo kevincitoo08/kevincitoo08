@@ -5,5 +5,7 @@ void menu();
 void ElejirJugadores();
 void Creditos();
 void Reglas();
+void PuntajesMaximos();
+void ModoSimuldado();
 
 #endif // MENU_H_INCLUDED
