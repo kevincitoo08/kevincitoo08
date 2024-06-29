@@ -41,6 +41,7 @@ void ModoUnJugadorSimulado()
             SextetodeX(tirada, TAM);
             if (Escalera(tirada, TAM) == true)
             {
+                system("pause");
                 system("cls");
                 cout << "------------------------------------------------------------------------------------------------------------------------";
                 cout << "" <<endl;
@@ -71,7 +72,7 @@ void ModoUnJugadorSimulado()
                 cout << "LA TIRADA SUMA: " << puntos << " PUNTOS" <<endl;
                 system("pause");
             }
-            if (PuntosAct > 100){
+            if (PuntosAct  > 100){
                 break;
             }
             lanzamiento++;
@@ -94,7 +95,11 @@ void ModoUnJugadorSimulado()
             cout << "                                               COMIENZA LA RONDA #" << ronda <<endl;
             cout << "------------------------------------------------------------------------------------------------------------------------";
         }
+    else{
+            break;
     }
+    }
+    system("cls");
     cout << "------------------------------------------------------------------------------------------------------------------------";
     cout << " " <<endl;
     cout << " " <<endl;
@@ -108,7 +113,7 @@ void ModoUnJugadorSimulado()
 
 void ModoDosJugadoresSimulado(){
 
-  const int TAM = 6;
+    const int TAM = 6;
     int tirada[TAM];
     int ronda = 1;
     int PuntosAct1 = 0;
@@ -186,7 +191,7 @@ void ModoDosJugadoresSimulado(){
                 cout << "LA TIRADA SUMA: " << puntos1 << " PUNTOS" <<endl;
                 system("pause");
             }
-            if (PuntosAct1 > 100 )
+            if (PuntosAct1 >= 100 )
             {
                 break;
             }
@@ -194,7 +199,7 @@ void ModoDosJugadoresSimulado(){
         }
         lanzamiento = 1;
         system("cls");
-        if (PuntosAct1 < 100)
+        if (PuntosAct1 <= 100)
         {
             cout << "------------------------------------------------------------------------------------------------------------------------";
             cout << " " <<endl;
@@ -208,9 +213,8 @@ void ModoDosJugadoresSimulado(){
             system("pause");
             system("cls");
 
-            for (int i = 0; i < 3; i++)
+         for (int i = 0; i < 3; i++)
             {
-
 
                 cout << "------------------------------------------------------------------------------------------------------------------------";
                 cout << "TURNO DE " << nombre2 << "     |    LANZAMIENTO # " << lanzamiento << "    |     PUNTAJE ACTUAL: " << PuntosAct2 << endl;
@@ -223,6 +227,7 @@ void ModoDosJugadoresSimulado(){
                 SextetodeX(tirada, TAM);
                 if (Escalera(tirada, TAM) == true)
                 {
+                    system("pause");
                     system("cls");
                     cout << "------------------------------------------------------------------------------------------------------------------------";
                     cout << "" <<endl;
@@ -263,6 +268,7 @@ void ModoDosJugadoresSimulado(){
                 lanzamiento++;
             }
             lanzamiento = 1;
+            if (PuntosAct2 < 100){
             system("cls");
             cout << "------------------------------------------------------------------------------------------------------------------------";
             cout << " " <<endl;
@@ -286,6 +292,7 @@ void ModoDosJugadoresSimulado(){
             system("pause");
             system("cls");
         }
+    }
     }
     if (PuntosAct1 > PuntosAct2)
     {
@@ -312,3 +319,5 @@ void ModoDosJugadoresSimulado(){
         system("pause");
     }
 }
+
+
